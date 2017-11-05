@@ -1,0 +1,22 @@
+div.btas-welcome
+  h1.btas-welcome__title Welcome to BT Assure
+  p.btas-welcome__progress-checker
+    span.glyphicon(
+      aria-hidden="true"
+      "[ngClass]"="{" +
+        "'glyphicon-refresh': (profileLoading$ | async)," +
+        "'rotating': (profileLoading$ | async)," +
+        "'glyphicon-ok': !(profileLoading$ | async)" +
+      "}"
+    )
+    span.btas-welcome__progress-detail Preparing your DAE profile
+  p.btas-welcome__progress-checker
+    span.glyphicon(
+      aria-hidden="true"
+      "[ngClass]"="{" +
+        "'glyphicon-refresh': (clientsLoading$ | async) || null == (clientsLoading$ | async)," +
+        "'rotating': (clientsLoading$ | async) || null == (clientsLoading$ | async)," +
+        "'glyphicon-ok': false === (clientsLoading$ | async)" +
+      "}"
+    )
+    span.btas-welcome__progress-detail Preparing client details

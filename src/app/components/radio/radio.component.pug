@@ -1,0 +1,17 @@
+label.btas-radio__item.btas-radio__text(*ngFor="let item of radioItems")
+  input.btas-radio__input(
+    "type"="radio"
+    "[name]"="name"
+    "[(ngModel)]"="value"
+    "[value]"="item.value"
+    "(click)"="select(item.value)"
+    "[checked]"="value === item.value"
+    "(change)"="onChange()"
+    "[disabled]"="disable")
+  span {{ item.title }}
+input.btas-radio__inline(
+  "type"="text"
+  "[hidden]"="!displayInput"
+  "(click)"="clearRadio()"
+  "(keyup)"="enteredValue($event)"
+  "[(ngModel)]"="textValue")

@@ -1,0 +1,20 @@
+.btas-asset.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "[showToggleActiveOnly]"="true"
+    "(toggleActiveOnly)"="onToggleActiveOnly($event)"
+    "(pageDestroy)"="onNavigateAway()"
+  )
+    btas-group-panel(
+      "*ngFor"="let assetType of assetTypesMap.keys()"
+      "[hidden]"="activeOnly && (assetTypesExcludedMap$ | async | mySafeAccess:assetType)"
+      "[selected]"="true !== (assetTypesExcludedMap$ | async | mySafeAccess:assetType)"
+      "[itemConfig]"="assetTypesMap.get(assetType)"
+      "[items]"="(assets$ | async | mySafeAccess:assetType)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddAsset(assetType)"
+      "(deleteItem)"="onDeleteAsset(assetType, $event)"
+      "(toggle)"="onToggleAsset(assetType, $event)"
+      "(contentChange)"="onAssetChange(assetType, $event)"
+    )

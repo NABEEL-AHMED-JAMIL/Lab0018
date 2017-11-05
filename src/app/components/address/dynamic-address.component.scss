@@ -1,0 +1,36 @@
+@import "~@styles/variables.scss";
+@import "~@btas/components/input/input.component.scss";
+
+.btas-dynamic-address__label {
+  @include field-label();
+}
+
+.btas-dynamic-address__input {
+  @extend .btas-input__item;
+  margin: 2px 0;
+}
+
+.btas-dynamic-address__inputs > .row {
+  margin: 0 0 10px 0;
+}
+
+.btas-dynamic-address__line1,
+.btas-dynamic-address__line2,
+.btas-dynamic-address__state > input,
+.btas-dynamic-address__postcode > input {
+  @extend .btas-dynamic-address__input;
+}
+
+.btas-dynamic-address__state,
+.btas-dynamic-address__postcode {
+  padding-left: 0;
+  padding-right: 0;
+
+  > input {
+    width: 100%;
+  }
+}
+
+.btas-dynamic-address__postcode {
+  padding-left: 15px;
+}

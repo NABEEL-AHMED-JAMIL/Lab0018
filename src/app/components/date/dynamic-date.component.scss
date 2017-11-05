@@ -1,0 +1,31 @@
+@import '~@styles/variables.scss';
+
+
+label.clearfix:after {
+  clear: both;
+}
+
+.dynamic-date__label {
+  margin: 5px 0px 5px 0px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+}
+
+.dynamic-date__value {
+  margin: 5px 15px 5px 15px;
+  padding-left: 0px;
+  font-size: $font-title-size;
+}
+
+.dynamic-date__item {
+  padding: 2px 5px 2px 5px;
+  border: $border-thin solid $theme-content;
+  @include border-radius(5px)
+}
+
+.dynamic-date__button {
+  margin-top: 6px;
+  margin-left: -30px;
+  background-color: $transparent;
+  border: $theme-content;
+}

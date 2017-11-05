@@ -1,0 +1,31 @@
+@import '~@styles/variables.scss';
+@import './radio.component.scss';
+
+
+label.clearfix:after {
+  clear: both;
+}
+
+.dynamic-radio__label {
+  @extend .btas-radio__label;
+}
+
+.dynamic-radio__value {
+  @extend .btas-radio__value;
+}
+
+.dynamic-radio__item {
+  @extend .btas-radio__item;
+}
+
+.dynamic-radio__input {
+  @extend .btas-radio__input;
+}
+
+.dynamic-radio__text {
+  @extend .btas-radio__text;
+}
+
+.dynamic-radio__inline {
+  @extend .btas-radio__inline;
+}

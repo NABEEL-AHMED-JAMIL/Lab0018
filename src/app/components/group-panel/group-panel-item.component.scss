@@ -1,0 +1,79 @@
+@import '~@styles/theming.scss';
+@import '~@styles/button.scss';
+
+
+$panel-body-padding: 5px;
+
+.panel-body {
+  padding: $panel-body-padding;
+  border: $border-thin solid $theme;
+  margin: 10px 0;
+  @include border-radius(10px);
+}
+
+.group-panel-item__summary {
+  padding-top: 10px;
+  margin-left: -15px;
+
+  /deep/ .dynamic-input__value, /deep/ .dynamic-dropdown__value {
+    //margin: 0px 15px 0px 15px;
+    font-weight: $font-bold;
+  }
+/*
+  /deep/ .dynamic-input__label, /deep/ .dynamic-dropdown__label  {
+    margin: 0px;
+  }
+*/
+}
+
+.group-panel-item__summaryitem {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.group-panel-item__content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.group-panel-item__separator {
+  line-height: 3px;
+  margin: 0 10px 10px 10px;
+  border-bottom: $border-thin solid $theme-content;
+}
+
+.group-panel-item__field {
+  padding-left: 15px;
+
+}
+
+.group-panel-item__icon {
+  color: $theme-content;
+}
+
+.group-panel-item__body {
+  border-color: $theme-content;
+  margin-left: 40px;
+}
+
+.group-panel-item__buttons {
+  text-align: center;
+  color: $theme;
+  font-size: $font-title-size;
+  font-weight: $font-bold;
+
+  border-top: $theme $border-thin solid;
+  padding: 10px 0 5px 0;
+  margin-left: -$panel-body-padding;
+  margin-right: -$panel-body-padding;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+  >.btn-delete {
+    color: $text-dangerous;
+  }
+}

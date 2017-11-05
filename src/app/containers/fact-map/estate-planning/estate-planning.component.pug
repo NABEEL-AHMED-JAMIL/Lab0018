@@ -1,0 +1,20 @@
+.btas-estate-planning.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "[showToggleActiveOnly]"="true"
+    "(toggleActiveOnly)"="onToggleActiveOnly($event)"
+    "(pageDestroy)"="onNavigateAway()"
+    )
+    btas-group-panel(
+      "*ngFor"="let estatePlanningType of estatePlanningTypesMap.keys()"
+      "[hidden]"="activeOnly && (estatePlanningsExcludedMap$ | async | mySafeAccess:estatePlanningType)"
+      "[selected]"="true !== (estatePlanningsExcludedMap$ | async | mySafeAccess:estatePlanningType)"
+      "[itemConfig]"="estatePlanningTypesMap.get(estatePlanningType)"
+      "[items]"="(estatePlannings$ | async | mySafeAccess:estatePlanningType)"
+      "(contentChange)"="onContentChange($event)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddEstatePlannings(estatePlanningType)"
+      "(deleteItem)"="onDeleteEstatePlannings(estatePlanningType, $event)"
+      "(toggle)"="onToggleEstatePlannings(estatePlanningType, $event)"
+    )

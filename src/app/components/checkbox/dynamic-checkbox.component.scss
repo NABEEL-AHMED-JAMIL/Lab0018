@@ -1,0 +1,15 @@
+@import '~@styles/variables.scss';
+@import './checkbox.component.scss';
+
+
+.dynamic-checkbox__label {
+  @extend .btas-checkbox__label;
+}
+
+.dynamic-checkbox__item {
+  @extend .btas-checkbox__item;
+}
+
+.dynamic-checkbox__input {
+  @extend .btas-checkbox__input;
+}

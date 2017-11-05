@@ -1,0 +1,30 @@
+@import '~@styles/variables.scss';
+
+.btas-breadcrumb {
+  margin-bottom: 0;
+  color: $white;
+  background-color: $theme;
+  border-color: $theme;
+  border-bottom-color: $white;
+  @include border-radius(0);
+}
+
+.btas-breadcrumb__item {
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $white;
+  }
+}
+
+.btas-breadcrumb__item + .btas-breadcrumb__item:before {
+  color: $white;
+  content: "-> ";
+  padding: 0 5px;
+}
+
+.btas-breadcrumb > .active {
+  color: $white;
+}

@@ -1,0 +1,24 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss";
+
+@import "./theming.scss";
+
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin field-label() {
+  margin: 5px 0px 5px 0px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+}
+
+@mixin field-value() {
+  margin: 5px 0;
+  padding: 0 15px;
+  font-size: $font-title-size;
+}

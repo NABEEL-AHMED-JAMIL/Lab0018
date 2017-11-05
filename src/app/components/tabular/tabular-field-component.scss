@@ -1,0 +1,59 @@
+@import "~@styles/button.scss";
+@import '~@styles/variables.scss';
+
+.field-label {
+  @include field-label();
+}
+
+.btn-circle {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  @include border-radius(12px);
+}
+
+table {
+  border-spacing: 0 20px;
+  border-collapse: separate;
+}
+
+td {
+  vertical-align: top;
+}
+
+td.action-cell, th.action-cell {
+  padding: 4px;
+}
+
+td.add-hint {
+  font-style: italic;
+  color: $footerback;
+}
+
+tfoot tr:first-child td {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: $theme;
+}
+
+tfoot td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+th { 
+  padding: 8px 15px 16px 15px;
+  font-size: $font-title-size;
+}
+
+thead tr th {
+  border: 0 solid $theme;
+  border-bottom-width: 1px;
+}
+
+
+td {
+  /deep/ btas-dynamic-component > * > div > div {
+    padding: 0 0 0 15px !important;
+  }
+}

@@ -1,0 +1,37 @@
+@import '~@styles/variables.scss';
+@import '~magic-check/sass/magic-check';
+
+
+.btas-checkbox__label {
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+  position: relative;
+  top: 5px;
+}
+
+.btas-checkbox__item {
+  margin-top: 5px;
+  padding-left: 15px;
+}
+
+.btas-checkbox__input {
+  @extend .magic-checkbox;
+  padding-left: 15px;
+}
+
+.btas-checkbox__item--round .magic-checkbox + label {
+  &:before {
+    @include border-radius(10px);
+  }
+
+  &:after {
+    top: 3px;
+  }
+}
+
+.magic-checkbox:checked + label {
+  &:before {
+    border-color: $theme-content;
+    background: $theme-content;
+  }
+}

@@ -1,0 +1,28 @@
+h4.modal-title.text-center {{itemModel.title}}
+p.text-center {{itemModel.subtitle}}
+div("*ngFor"="let item of itemModel.items")
+  div.container-fluid.row
+    div.col-md-3(
+      "*ngFor"="let field of item.summary"
+      "[ngClass]"="['col-md-' + field.span]"
+      "[formGroup]"="myFormGroup"
+    )
+      span
+        strong {{field.title}}
+  hr
+  div.modal-body
+    div.container-fluid.row
+      div.col-md-3(
+        "*ngFor"="let field of item.fields"
+        "[formGroup]"="myFormGroup"
+      )
+        btas-dynamic-component(
+          "[formGroup]"="myFormGroup"
+          "[fieldConfig]"="field")
+  //      span {{field.title}}
+  //      btas-input("[(value)]"="field.name") 
+  hr
+div.container-fluid.row
+  div.col-md-8.text-center.btn-group.btn-group-justified
+    a.btn.btn-sm.btn-info(href="#" data-dismiss="modal") Details
+    a.btn.btn-sm.btn-success(href="#" data-dismiss="modal") Save

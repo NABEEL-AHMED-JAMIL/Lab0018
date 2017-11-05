@@ -1,0 +1,15 @@
+div.form-inline("[formGroup]"="formGroup")
+  label.control-label.dynamic-textarea__label(
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title | i18n }}
+  textarea.dynamic-textarea__item(
+        "[formControlName]"="fieldConfig.name"
+        "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+        "(change)"="onValueChanged()"
+        "rows"="{{ fieldConfig.fieldOptions.rows}}"
+        "cols"="{{ fieldConfig.fieldOptions.cols}}"
+  )
+  span.dynamic-textarea__value(
+    "*ngIf"="fieldConfig.readonly"
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  ) {{ fieldValue }}

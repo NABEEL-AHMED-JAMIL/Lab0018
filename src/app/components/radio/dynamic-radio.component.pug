@@ -1,0 +1,34 @@
+div.dynamic-radio("[formGroup]"="formGroup")
+  label.control-label.dynamic-radio__label(
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title | i18n }}
+  div.dynamic-radio__item("*ngIf"="!fieldConfig.readonly"
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]")
+    label.dynamic-radio__text(
+      "*ngFor"="let item of fieldConfig.options; let i=index"
+      "[ngClass]"="{'radio-inline': fieldConfig.fieldOptions.inline,"
+        + "'radio': !fieldConfig.fieldOptions.inline}"
+      for="{{ uuidStrings[i] }}"
+    )
+      input.dynamic-radio__input(
+        type="radio"
+        id="{{ uuidStrings[i] }}"
+        name="{{ uniqueName }} "
+        "[value]"="item.value"
+        "[checked]"="fieldValue === item.value"
+        "(click)"="onSelect(item.value)"
+      )
+      span {{ item.title | i18n }}
+    input.col-md-12.dynamic-radio__inline(
+      "type"="text"
+      "[hidden]"="!fieldConfig.fieldOptions.displayInput"
+      "(focus)"="clearRadio()"
+      "(change)"="onTextValueChanged($event)"
+      "[value]"="textValue")
+    input("type"="hidden"
+      "[formControlName]"="fieldConfig.name"
+      "[value]"="fieldValue")
+  p.dynamic-radio__value(
+    "*ngIf"="fieldConfig.readonly"
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+) {{ fieldValue | titleValue:fieldConfig.options | i18n }}

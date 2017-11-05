@@ -1,0 +1,20 @@
+@import '~@styles/variables.scss';
+
+.dynamic-textarea__label {
+  margin: 5px 0px 5px 0px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+}
+
+.dynamic-textarea__value {
+  margin: 5px 15px 5px 15px;
+  padding-left: 0px;
+  font-size: $font-title-size;
+}
+
+.dynamic-textarea__item {
+  @extend .dynamic-textarea__value;
+  padding: 2px 5px 2px 5px;
+  border: $border-thin solid $theme-content;
+  @include border-radius(5px)
+}

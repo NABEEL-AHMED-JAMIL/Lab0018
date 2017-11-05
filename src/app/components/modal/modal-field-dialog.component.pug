@@ -1,0 +1,32 @@
+div.modal-dialog(class="modal-{{option.size || 'lg'}}")
+  div.modal-content
+    div.modal-header
+      button.close.pull-right((click)="dismiss.emit()")
+        span(aria-hidden="true") &times;
+      h4.modal-title.text-center {{option.title}}
+      div.text-center {{option.subtitle}}
+    div.modal-body
+      div.container-fluid.row
+        btas-group-panel-item(
+          "[itemConfig]"="option.item"
+          "[itemModel]"="model"
+          "[collapsible]"="false")
+      div.container-fluid.row
+        div.col-md-8.text-center.btn-group.btn-group-justified
+          a.btn(
+            "*ngFor"="let button of buttons"
+            "[ngClass]"="button.styleClass"
+            href="#" "(click)"="onClick($event, button)") {{ button.text }}
+div.modal.fade(
+    "*ngIf"="isChildShown"
+    bsModal [config]="{show: true}"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="mySmallModalLabel"
+    aria-hidden="true"
+    "(onHidden)"="onHideChild()")
+  btas-modal-field-dialog(
+    "(dismiss)"="onDismissChild($event)"
+    "(applyChanges)"="onApplyChildChanges($event)"
+    "[option]"="childModalOption"
+    "[model]"="model")

@@ -1,0 +1,37 @@
+@import '~@styles/variables.scss';
+
+.btas-page {
+  text-align: left;
+}
+
+.btas-page__title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: $font-heading-size;
+  font-weight: $font-bold;
+}
+
+.btas-page__subtitle {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+}
+
+.btas-page__separator {
+  line-height: 3px;
+  margin: 10px 0 20px;
+  border-bottom: $border-medium solid $theme-content;
+}
+
+.btas-page__show-active-only {
+  position: absolute;
+  right: 5px;
+}
+
+/* the last group panel should have no bottom separator */
+/deep/ btas-group-panel:last-child {
+  .group-panel__separator:last-child {
+    display: none !important;
+  }
+}

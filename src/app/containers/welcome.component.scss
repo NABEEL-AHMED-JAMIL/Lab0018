@@ -1,0 +1,63 @@
+@import '~@styles/theming.scss';
+
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -ms-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -webkit-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.btas-welcome {
+  height: 100vh;
+  color: white;
+  background: $theme;
+  text-align: center;
+}
+
+.btas-welcome__title {
+  margin-top: 0;
+  padding-top: 200px;
+}
+
+.btas-welcome__progress-checker {
+  margin: 1em 0;
+}
+
+.btas-welcome__progress-detail {
+  margin-left: 16px;
+}

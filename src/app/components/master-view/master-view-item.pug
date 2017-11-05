@@ -1,0 +1,4 @@
+div.btas-master-view
+  h4.btas-master-view__header Facts Map
+  p("*ngFor"="let item of viewItems")
+    a.btas-master-view__itemlink("[routerLink]"="[item.routerLink]" "routerLinkActive"="active") {{ item.text | i18n }}

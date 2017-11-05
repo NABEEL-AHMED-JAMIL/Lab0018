@@ -1,0 +1,37 @@
+doctype html
+div("[formGroup]"="formGroup")
+  label.control-label.dynamic-dropdown__label(
+    "*ngIf"="fieldConfig.labelPosition !=='hidden'"
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title }}
+  div.dynamic-currency__field("[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  "*ngIf"="!fieldConfig.readonly" dropdown='' "keyboardNav"="true"
+  "[dropup]"="isDropup")
+    button.dropdown-toggle.dynamic-currency-dropdown__toggle(
+    "type"="button" "dropdownToggle"=''
+    ) {{ fieldValue?.code }} {{ fieldValue?.code | myCurrencySymbol }}
+      span.dynamic-dropdown__caret.caret
+    ul.dropdown-menu.dynamic-dropdown__options(ref-dropupdown "*dropdownMenu"='', "role"="menu")
+      ng-container("*ngIf"="isOpen")
+        li("*ngFor"="let item of currencyCodes; let i=index"
+            "title"="{{item.name}}"
+            "(click)"="itemClick($event, item)"
+            "role"="menuitem")
+          a.dropdown-item("href"="#"
+            "[class.separator]"="i === topN - 1")
+            strong {{item.code}} 
+            span {{ item.symbol }}
+    div.input_wrapper
+      input.dynamic-currency__input__item(
+        "*ngIf"="!fieldConfig.readonly"
+        "(change)"="onAmountChanged($event.target.value)"
+        "[ngModel]"="fieldValue?.value" "[ngModelOptions]"="{ standalone: true }"
+        type="text")
+  p.dynamic-currency__value(
+      "*ngIf"="fieldConfig.readonly"
+      "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  ) {{ fieldValue && fieldValue.value ? (fieldValue.code + ' ' + (fieldValue.code | myCurrencySymbol) + (fieldValue.value | number:'1.2-2')) : '--' }}
+  div.clearfix("*ngIf"="'top' == fieldConfig.labelPosition")
+  input("type"="hidden"
+    "[value]"="fieldValue"
+    "[formControlName]"="fieldConfig.name")

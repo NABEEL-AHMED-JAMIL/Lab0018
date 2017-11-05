@@ -1,0 +1,20 @@
+.btas-liabilities.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "[showToggleActiveOnly]"="true"
+    "(toggleActiveOnly)"="onToggleActiveOnly($event)"
+    "(pageDestroy)"="onNavigateAway()"
+    )
+    btas-group-panel(
+      "*ngFor"="let liabilityType of liabilityTypesMap.keys()"
+      "[hidden]"="activeOnly && (liabilitiesExcludedMap$ | async | mySafeAccess:liabilityType)"
+      "[selected]"="true !== (liabilitiesExcludedMap$ | async | mySafeAccess:liabilityType)"
+      "[itemConfig]"="liabilityTypesMap.get(liabilityType)"
+      "[items]"="(liabilities$ | async | mySafeAccess:liabilityType)"
+      "(contentChange)"="onContentChange($event)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddLiabilities(liabilityType)"
+      "(deleteItem)"="onDeleteLiabilities(liabilityType, $event)"
+      "(toggle)"="onToggleLiabilities(liabilityType, $event)"
+    )

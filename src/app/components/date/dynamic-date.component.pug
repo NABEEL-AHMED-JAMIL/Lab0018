@@ -1,0 +1,31 @@
+div.form-inline("[formGroup]"="formGroup")
+  label.dynamic-date__label.control-label(
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+    "*ngIf"="fieldConfig.labelPosition !== 'hidden'"
+  ) {{ fieldConfig.title | i18n }}
+  input(
+    type="hidden"
+    "[formControlName]"="fieldConfig.name"
+  )
+  div(
+    "*ngIf"="!fieldConfig.readonly"
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  )
+    span.pull-left
+      input.dynamic-date__item.form-control(
+        "ngx-mydatepicker"
+        "(dateChanged)"="setDate($event)"
+        "[value]"="value.jsdate | date: 'dd/MM/yyyy'"
+        "[options]"="fieldConfig.fieldOptions || defaultOptions"
+        "#dp"="ngx-mydatepicker"
+        type="text"
+      )
+    span.pull-left
+      button.dynamic-date__button("type"="button"
+        "(click)"="dp.toggleCalendar()")
+        i.glyphicon.glyphicon-calendar
+  div.clearfix("*ngIf"="'top' == fieldConfig.labelPosition")
+  p.dynamic-date__value(
+    "*ngIf"="fieldConfig.readonly"
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  ) {{ value.jsdate | date: 'dd/MM/yyyy' }}

@@ -1,0 +1,32 @@
+ng-container("[formGroup]"="formGroup")
+  label.field-label(
+    "*ngIf"="fieldConfig.title"
+    "[hidden]"="'hidden' === fieldConfig.labelPosition"
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title }}
+  table.field-table("[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 8)]")
+    thead
+      tr
+        th("*ngFor"="let header of fieldConfig.fieldOptions.columns"
+          "[ngClass]"="['col-md-' + (header.span || 4)]"
+        ) {{ header.title }}
+        th.action-cell("*ngIf"="fieldConfig.fieldOptions.hasDelete")
+    tbody
+      tr("*ngFor"="let row of formArray.controls; let i = index")
+        td("*ngFor"="let col of fieldConfig.fieldOptions.columns")
+          btas-dynamic-component("[fieldConfig]"="col"
+            "[formGroup]"="row")
+        td.action-cell("*ngIf"="fieldConfig.fieldOptions.hasDelete")
+          div.btn-group.function-btn(role="group")
+            button.functional-btn.btn-circle.btn-danger("(click)"="onDelete(i)")
+              i.glyphicon.glyphicon-minus
+      tr("*ngIf"="formArray.controls.length == 0 && fieldConfig.fieldOptions.hasAdd")
+        td.add-hint(colSpan="{{ fieldConfig.fieldOptions.columns.length }}") Click on + below to add a record
+    tfoot("*ngIf"="fieldConfig.fieldOptions.hasAdd")
+      tr
+        td.action-cell("*ngIf"="fieldConfig.fieldOptions.hasAdd" colSpan="{{ fieldConfig.fieldOptions.columns.length }}")
+          div.btn-group.function-btn(role="group"
+            "*ngIf"="fieldConfig.fieldOptions.hasAdd")
+            button.functional-btn.btn-circle("(click)"="onAdd()")
+              i.glyphicon.glyphicon-plus
+        td("*ngIf"="fieldConfig.fieldOptions.hasDelete")

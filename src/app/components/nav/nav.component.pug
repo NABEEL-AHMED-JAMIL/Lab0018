@@ -1,0 +1,22 @@
+nav.btas-navbar.navbar.navbar-default
+  div.container-fluid
+    div.btas-navbar__header.navbar__header
+      button.btas-navbar__toggle.navbar-toggle.collapsed(
+        type="button"
+        data-toggle="collapse"
+        data-target="#btas-navbar__items"
+        aria-expanded="false"
+      )
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      a.btas-navbar__brand.navbar-brand(href="#")
+        img.btas-navbar__brandimg(alt="BT Assure" title="BT Assure" "[src]"="logoUrl")
+
+    div#btas-navbar__items.collapse.btas-navbar__collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.btas-navbar__item("*ngFor"="let item of navItems")
+          a.btas-navbar__itemlink("[routerLink]"="[item.routerLink]"
+            "routerLinkActive"="active") {{ item.text | i18n }}

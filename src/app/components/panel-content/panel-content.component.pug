@@ -1,0 +1,17 @@
+div.panel-content("*ngIf"="singleMode")
+  h3 {{ contentModel.sections[0].title }}
+  ul.list-group.row
+    li.list-group-item.col-md-6(
+      "*ngFor"="let field of contentModel.sections[0].fields"
+    ) {{ field.title }}: {{ field.value }}
+
+div.panel-content("*ngIf"="multiMode")
+  ul.list-group-row
+    li.list-group-item.col-md-6(
+      "*ngFor"="let section of contentModel.sections"
+    )
+      h3 {{ section.title }}
+      ul.list-group-row
+        li.list-group-item(
+          "*ngFor"="let field of section.fields"
+        ) {{ field.title }}: {{ field.value }}

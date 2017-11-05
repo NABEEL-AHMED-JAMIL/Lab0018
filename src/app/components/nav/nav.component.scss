@@ -1,0 +1,44 @@
+@import '~@styles/variables.scss';
+
+.btas-navbar {
+  margin-bottom: 0;
+  color: $white; /*BACKGROUND color for active* #16B1D5*/
+  background-color: $theme;
+  border-color: $theme;
+  border-bottom-color: $white;
+  @include border-radius(0);
+}
+
+.btas-navbar__header {
+}
+
+.btas-navbar__toggle {
+}
+
+.dropdown-menu > li > a:hover,
+ .dropdown-menu > li > a:focus {
+  color: $theme;
+  text-decoration: none;
+  background-color: $theme;  /*change color of links in drop down here*/
+}
+
+.btas-navbar__brand {
+}
+
+.btas-navbar__brandimg {
+  width: 40px;
+}
+
+.btas-navbar__collapse {
+}
+
+.btas-navbar__itemlink {
+  color: $white !important;
+  font-size: 16px;
+  &:hover {
+    cursor: hand;
+  }
+  &.active {
+    border-bottom: 3px solid white;
+  }
+}

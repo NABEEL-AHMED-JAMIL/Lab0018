@@ -1,0 +1,13 @@
+@import '~@styles/variables.scss';
+
+$text-color: #337ab7;
+
+.btas-master-view__header {
+  color: $text-color;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $black;
+}
+
+.btas-master-view__itemlink {
+  color: $text-color;
+}

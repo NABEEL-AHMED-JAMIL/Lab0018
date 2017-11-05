@@ -1,0 +1,14 @@
+@import '~@styles/variables.scss';
+
+.modal-field__label {
+  @include field-label();
+}
+
+.modal-field__value {
+  @include field-value();
+  margin: 0;
+}
+
+.btn {
+  padding: 3px 12px;
+}

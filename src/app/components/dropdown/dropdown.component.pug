@@ -1,0 +1,26 @@
+.btn-group(
+  "dropdown"=""
+  keyboardNav="true"
+)
+  button.dropdownToggle.dropdown__toggle.btn.btn-default.btn-border(
+   type="button"
+   "dropdownToggle"=""
+   value="{{selectedItem.value}}"
+   [disabled]="disable"
+  ) {{selectedItem.title}}
+    span.caret
+  ul.dropdown-menu.dropdown__options(
+    "*dropdownMenu"=""
+    role="menu"
+  )
+    li(
+      *ngFor="let item of dropdownModel.items"
+      value="{{item.value}}"
+      role="menuitem"
+      "(click)"="itemClick($event, item)"
+    )
+      a.dropdown-item(href="#") {{item.title}}
+  input(
+    type="hidden"
+    value="{{ selectedItem.value }}"
+  )

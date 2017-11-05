@@ -1,0 +1,26 @@
+@import '~@styles/variables.scss';
+@import './input.component.scss';
+
+
+label.clearfix:after {
+  clear: both;
+}
+
+.dynamic-input__label {
+  @extend .btas-input__label;
+}
+
+.dynamic-input__value {
+  @extend .btas-input__value;
+}
+
+.dynamic-input__item {
+  @extend .btas-input__item;
+}
+
+.dynamic-input__wrapper {
+  @extend .btas-input__value;
+  padding: 0 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

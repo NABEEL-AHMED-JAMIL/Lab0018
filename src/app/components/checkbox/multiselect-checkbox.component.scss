@@ -1,0 +1,20 @@
+@import '~@styles/variables.scss';
+@import './checkbox.component.scss';
+@import '../input/input.component.scss';
+
+.multiselect-checkbox__label {
+  @extend .btas-checkbox__label;
+}
+
+.multiselect-checkbox__item {
+  @extend .btas-checkbox__item;
+}
+
+.multiselect-checkbox__input {
+  @extend .btas-checkbox__input;
+}
+
+.multiselect-input__item {
+  @extend .btas-input__item;
+  margin-left: 0px;
+}

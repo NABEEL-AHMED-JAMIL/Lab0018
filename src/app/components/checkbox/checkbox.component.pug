@@ -1,0 +1,15 @@
+label.control-label.btas-checkbox__label(
+  "*ngIf"="'left' === labelPosition"
+) {{ title }}
+label.btas-checkbox__item.btas-checkbox__item--round
+  input.btas-checkbox__input(
+    id="{{ uuidString }}"
+    type="checkbox"
+    name="{{ name }}"
+    "(change)"="checkChanged($event)"
+    "[(ngModel)]"="checked"
+  )
+  label(for="{{ uuidString }}")
+label.control-label.btas-checkbox__label(
+  "*ngIf"="'right' === labelPosition"
+) {{ title }}

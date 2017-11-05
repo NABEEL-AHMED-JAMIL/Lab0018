@@ -1,0 +1,57 @@
+@import './dropdown.component.scss';
+
+.btn-border {
+  @extend .btn-border;
+}
+
+.caret {
+  @extend .caret;
+}
+
+label.clearfix:after {
+  clear: both;
+}
+
+.dynamic-dropdown__label {
+  padding: 0 15px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+}
+
+.dynamic-dropdown__value {
+  padding: 0 15px;
+  font-size: $font-title-size;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.dynamic-dropdown__toggle {
+  @extend .dynamic-dropdown__value;
+  padding: 2px 5px;
+  margin: 0;
+  background-color: $transparent;
+  border: $border-thin solid $theme-content;
+  @include border-radius(5px)
+}
+
+.dynamic-dropdown__caret {
+  margin-left: 10px;
+}
+
+.dynamic-dropdown__options {
+  margin-left: 15px;
+}
+
+.dynamic-dropdown__options--separator {
+  text-align: center;
+  padding-left: 10px;
+  font-weight: bold;
+  font-style: italic;
+
+  &:hover {
+    background: inherit;
+  }
+}

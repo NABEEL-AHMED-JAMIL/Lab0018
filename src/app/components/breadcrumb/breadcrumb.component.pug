@@ -1,0 +1,4 @@
+div.btas-breadcrumb.breadcrumb
+  a.btas-breadcrumb__item("*ngFor"="let crumb of breadcrumbs"
+  "[routerLink]"="[crumb.routerLink]"
+  "routerLinkActive"="active")  {{ crumb.text | i18n }}

@@ -1,0 +1,99 @@
+@import '~@styles/variables.scss';
+
+
+label.clearfix:after {
+  clear: both;
+}
+
+.btas-radio__label {
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+  padding: 0 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btas-radio__value {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+}
+
+.btas-radio__item {
+  padding-left: 15px;
+}
+
+.btas-radio__input {
+  padding-left: 15px;
+}
+
+@keyframes hover-color{
+  0% {border-color:silver} to {border-color:#3e97eb}
+}
+
+[type="radio"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+
+[type="radio"] + span:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid silver;
+    position: absolute;
+    left: 1px;
+}
+
+[type="radio"]:checked + span:before {
+    border-color: $theme-content;
+}
+
+[type="radio"]:checked + span:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 8px solid $theme-content;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+}
+
+[type="radio"]:focus + span:before {
+    box-shadow: 0 0 0 1px $theme-content;
+}
+
+[type="radio"]:hover + span:before, [type="radio"]:focus + span:before {
+    animation-duration: .4s;
+    animation-name: hover-color;
+    animation-fill-mode: both;
+}
+
+.radio-inline {
+  padding-left: 0px;
+}
+
+.btas-radio__text {
+  @extend .btas-radio__label;
+  padding-left: 25px !important;
+  margin-right: 5px;
+  position: relative;
+}
+
+.btas-radio__inline{
+  @extend .btas-radio__value;
+  border: $border-thin solid $theme-content;
+  @include border-radius(5px);
+  padding: 2px 5px 2px 5px;
+}

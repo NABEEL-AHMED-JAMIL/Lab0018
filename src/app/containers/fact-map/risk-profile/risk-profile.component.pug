@@ -1,0 +1,18 @@
+.btas-risk-profile.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "(pageDestroy)"="onNavigateAway()"
+    )
+    btas-group-panel(
+      "*ngFor"="let riskProfileType of riskProfileTypesMap.keys()"
+      "[hidden]"="activeOnly && (riskProfileExcludedMap$ | async | mySafeAccess:riskProfileType)"
+      "[selected]"="true !== (riskProfileExcludedMap$ | async | mySafeAccess:riskProfileType)"
+      "[itemConfig]"="riskProfileTypesMap.get(riskProfileType)"
+      "[items]"="(riskProfile$ | async | mySafeAccess:riskProfileType)"
+      "(contentChange)"="onContentChange(riskProfileType, $event)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddRiskProfile(riskProfileType)"
+      "(deleteItem)"="onDeleteRiskProfile(riskProfileType, $event)"
+      "(toggle)"="onToggleRiskProfile(riskProfileType, $event)"
+      )

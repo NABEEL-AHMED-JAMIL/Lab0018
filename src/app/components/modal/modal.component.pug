@@ -1,0 +1,16 @@
+button.btn.btn-primary((click)="childModal.show()" "[disabled]"="disable") {{model.btntitle}}
+div.modal.fade(
+    bsModal [config]="modalConfig"
+    #childModal="bs-modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="mySmallModalLabel"
+    aria-hidden="true")
+  div.modal-dialog(class="modal-{{model.size}}")
+    div.modal-content
+      div.modal-header
+        button.close.pull-right((click)="childModal.hide()")
+          span(aria-hidden="true") &times;
+        btas-modal-body(
+          "(formChanged)"="onItemChanged($event)"
+          "[itemModel]"="model")

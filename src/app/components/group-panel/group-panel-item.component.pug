@@ -1,0 +1,43 @@
+div.group-panel-item__body.panel-body
+  div.group-panel-item__summary("*ngIf"="!!itemConfig.summary")
+    div.col-md-12.group-panel-item__summaryitem
+      div.form-group(
+        "*ngFor"="let field of itemConfig.summary"
+        "[ngClass]"="['col-md-' + (field.span || 12)]"
+        "[formGroup]"="myFormGroup"
+      )
+        btas-dynamic-component(
+          "[formGroup]"="myFormGroup"
+          "[fieldConfig]"="field"
+          "(valueChange)"="onFieldValueChanged(field, $event)"
+          "(updateModel)"="onUpdateModel($event)"
+        )
+  div.pull-right("*ngIf"="collapsible !== false")
+    button.btn-default.functional-btn.btn-borderless(
+      "(click)"="collapsed = !collapsed")
+      span.group-panel-item__icon.glyphicon(
+        "[ngClass]"="{" +
+        "'glyphicon-triangle-bottom': !collapsed," +
+        "'glyphicon-triangle-left': collapsed}")
+  div.row.group-panel-item__separator(
+    "*ngIf"="!collapsed && !!itemConfig.summary"
+  )
+
+  div.row.form-group.group-panel-item__field(
+    "[@hideField]"="collapsed || fieldHidden.get(field.name)"
+    "*ngFor"="let field of itemConfig.fields; trackBy: trackField "
+  )
+    div.col-md-12.group-panel-item__content
+      btas-dynamic-component(
+        "[formGroup]"="myFormGroup"
+        "[fieldConfig]"="field"
+        "(valueChange)"="onFieldValueChanged(field, $event)"
+        "(updateModel)"="onUpdateModel($event)"
+      )
+  div.row.group-panel-item__buttons(
+    "*ngIf"="!collapsed && hasButtons"
+  )
+    button.btn-default.btn-borderless.btn-delete(
+      "*ngIf"="itemConfig.deletable"
+      "(click)"="onDeleteItem($event)"
+    ) {{ "DELETE" | i18nStatic }}

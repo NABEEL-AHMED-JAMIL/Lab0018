@@ -1,0 +1,48 @@
+.btas-personal-details.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "(pageDestroy)"="onNavigateAway()"
+  )
+    btas-group-panel(
+      "[itemConfig]"="keyInfoItemConfig"
+      "[items]"="keyInfos$ | async"
+      "(contentChange)"="onDetailChange('keyInfo', $event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="contactInfoItemConfig"
+      "[items]"="contactInfos$ | async"
+      "(contentChange)"="onDetailChange('contactInfo', $event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="otherInfoItemConfig"
+      "[items]"="otherInfos$ | async"
+      "(contentChange)"="onDetailChange('otherInfo', $event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="dependentItemConfig"
+      "[items]"="dependents$ | async"
+      "[hasAdd]"="true"
+      "(add)"="onAddDependent($event)"
+      "(deleteItem)"="onDeleteDependent($event)"
+      "(contentChange)"="onDependentChange($event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="employmentItemConfig"
+      "[items]"="employments$ | async"
+      "(contentChange)"="onDetailChange('employmentInfo', $event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="identificationItemConfig"
+      "[items]"="identifications$ | async"
+      "(contentChange)"="onDetailChange('identification', $event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="thirdPartyItemConfig"
+      "[items]"="thirdParties$ | async"
+      "(contentChange)"="onDetailChange('thirdParty', $event)"
+    )
+    btas-group-panel(
+      "[itemConfig]"="referralItemConfig"
+      "[items]"="referrals$ | async"
+      "(contentChange)"="onReferralChange($event)"
+    )

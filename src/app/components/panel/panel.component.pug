@@ -1,0 +1,4 @@
+h3 {{ panelModel.title }}
+h4("*ngIf"="panelModel.subtitle") {{ panelModel.subtitle }}
+btas-panel-content("*ngIf"="panelModel.content" "[contentModel]"="panelModel.content")
+ng-content

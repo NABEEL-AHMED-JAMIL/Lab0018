@@ -1,0 +1,18 @@
+div.dynamic-input("[formGroup]"="formGroup")
+  label.control-label.dynamic-input__label(
+    "*ngIf"="fieldConfig.title"
+    "[hidden]"="'hidden' === fieldConfig.labelPosition"
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title | i18n }}
+  div.dynamic-input__wrapper("[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+      "*ngIf"="!fieldConfig.readonly")
+    input.dynamic-input__item(
+      "[formControlName]"="fieldConfig.name"
+      "(change)"="onValueChanged($event.target.value)"
+      type="{{ fieldConfig.readonly ? 'hidden' : 'text' }}"
+    )
+  div.clearfix("*ngIf"="'top' == fieldConfig.labelPosition")
+  p.dynamic-input__value(
+    "*ngIf"="fieldConfig.readonly"
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  ) {{ fieldValue }}

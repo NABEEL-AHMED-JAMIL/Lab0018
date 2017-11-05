@@ -1,0 +1,20 @@
+.btas-personal-insurance.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "[showToggleActiveOnly]"="true"
+    "(toggleActiveOnly)"="onToggleActiveOnly($event)"
+    "(pageDestroy)"="onNavigateAway()"
+    )
+    btas-group-panel(
+      "*ngFor"="let personalInsuranceType of personalInsuranceTypesMap.keys()"
+      "[hidden]"="activeOnly && (personalInsuranceExcludedMap$ | async | mySafeAccess:personalInsuranceType)"
+      "[selected]"="true !== (personalInsuranceExcludedMap$ | async | mySafeAccess:personalInsuranceType)"
+      "[itemConfig]"="personalInsuranceTypesMap.get(personalInsuranceType)"
+      "[items]"="(personalInsurance$ | async | mySafeAccess:personalInsuranceType)"
+      "(contentChange)"="onContentChange($event)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddPersonalInsurance(personalInsuranceType)"
+      "(deleteItem)"="onDeletePersonalInsurance(personalInsuranceType, $event)"
+      "(toggle)"="onTogglePersonalInsurance(personalInsuranceType, $event)"
+    )

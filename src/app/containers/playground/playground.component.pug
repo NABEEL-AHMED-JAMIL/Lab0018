@@ -1,0 +1,22 @@
+.btas-playground.container-fluid
+  btas-page("[pageModel]"="pageModel")
+    btas-panel("[panelModel]"="panelModel")
+    btas-input("[(value)]"="textValue" "[disabled]"="false")
+    //- btas-group-panel("[panelModel]"="groupPanelModel")
+    p
+      code InputValue : {{textValue}}
+    btas-dropdown(
+      "[dropdownModel]"="dropdownModel"
+    )
+    btas-modal("[model]"="modalModel")
+    btas-radio(
+        "[(value)]"="radioModel"
+        "[name]"="radioName"
+        "[radioItems]"="radioItems"
+        "[label]"="radioLabel"
+        "[disable]"="false")
+    p
+      code RadioValue : {{radioModel}}
+    btas-dynamic-component(
+      "[formGroup]"="myFormGroup"
+      "[fieldConfig]"="currencyFieldConfig")

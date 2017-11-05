@@ -1,0 +1,21 @@
+@import "~@styles/theming.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  overflow: auto;
+}
+
+body {
+  font-family: $font-family;
+}
+
+.module-content {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}

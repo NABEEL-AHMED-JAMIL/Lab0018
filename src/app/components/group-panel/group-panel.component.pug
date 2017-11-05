@@ -1,0 +1,29 @@
+div.group-panel.group-panel__default.panel-default
+  div.group-panel__heading.panel-heading(role="tab")
+    div.group-panel__title.panel-title
+      span.group-panel__text {{ itemConfig.title | i18n }}
+      span.group-panel__button.btn-bar.functional-btn.pull-right
+        div.btn-group(role="group" "*ngIf"="hasToggle")
+          button.functional-btn.btn-circle.group-panel__toggle-button(
+            "[ngClass]"="{'selected': selected}"
+            "(click)"="onToggle($event)"
+          )
+            i.glyphicon(
+              "[ngClass]"="{'glyphicon-ok': selected}"
+            )
+        div.btn-group.function-btn(role="group" "*ngIf"="hasAdd")
+          button.functional-btn.btn-circle(
+            "(click)"="onAdd($event)"
+          )
+            i.glyphicon.glyphicon-plus
+  div.row.group-panel__separator
+  btas-group-panel-item(
+    "*ngFor"="let item of items; trackBy: trackItem"
+    "[itemConfig]"="itemConfig"
+    "[itemModel]"="item"
+    "(formChanged)"="onItemChanged($event)"
+    "(deleteItem)"="onDelete(item.id)"
+  )
+  div.row.group-panel__separator(
+    "*ngIf"="showBottomSeparator"
+  )

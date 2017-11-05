@@ -1,0 +1,13 @@
+label.control-label.btas-input__label(
+    "[ngClass]"="['col-md-' + labelSpan]"
+  ) {{ title }}
+input.btas-input__item(
+  "[ngClass]"="['col-md-' + fieldSpan]"
+  name="name"
+  type="{{ readonly ? 'hidden' : 'text' }}"
+)
+div.clearfix("*ngIf"="'top' == labelPosition")
+p.btas-input__value(
+  "*ngIf"="readonly"
+  "[ngClass]"="['col-md-' + fieldSpan]"
+) {{ value }}

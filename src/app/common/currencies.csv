@@ -1,0 +1,169 @@
+name,code,numericCode,rank,symbol
+Australian Dollar,AUD,36,1,$
+US Dollar,USD,840,2,$
+Euro,EUR,978,3,€
+Japanese Yen,JPY,392,4,¥
+British Pound Sterling,GBP,826,5,£
+Canadian Dollar,CAD,124,6,$
+Swiss Franc,CHF,756,7,
+Chinese Yuan Renminbi,CNY,156,8,¥
+Swedish Krona,SEK,752,9,kr
+New Zealand Dollar,NZD,554,10,$
+Mexican Peso,MXN,484,11,$
+Singapore Dollar,SGD,702,12,$
+Hong Kong Dollar,HKD,344,13,$
+Norwegian Krone,NOK,578,14,øre
+Korean Won,KRW,410,15,₩
+Turkish Lira,TRY,949,16,₺
+Russian Ruble,RUB,643,17,₽
+Indian Rupee,INR,356,18,₨
+Brazilian Real,BRL,986,19,$
+South African Rand,ZAR,710,20,SAR
+Chilean Peso,CLP,152,21,$
+Czech Koruna,CZK,203,22,Kč
+Danish Krone,DKK,208,23,ø
+Hungarian Forint,HUF,348,24,Ft
+Indonesian Rupiah,IDR,360,25,Rp
+Malaysian Ringgit,MYR,458,26,RM
+New Israeli Sheqel,ILS,376,27,₪
+Pakistan Rupee,PKR,586,28,Rs
+Philippine Peso,PHP,608,29,₱
+Polish Zloty,PLN,985,30,zł
+Thai Baht,THB,764,31,฿
+New Taiwan Dollar,TWD,901,32,$
+UAE Dirham,AED,784,33,د.إ
+Afghani,AFN,971,34,
+Lek,ALL,8,35,
+Armenian Dram,AMD,51,36,դր
+Netherlands Antillean Guilder,ANG,532,37,NAƒ
+Kwanza,AOA,973,38,Kz
+Argentine Peso,ARS,32,39,$
+Aruban Florin,AWG,533,40,ƒ
+Azerbaijanian Manat,AZN,944,41,ман
+Convertible Mark,BAM,977,42,KM
+Barbados Dollar,BBD,52,43,$
+Taka,BDT,50,44,৳
+Bulgarian Lev,BGN,975,45,лв
+Bahraini Dinar,BHD,48,46,ب.د
+Burundi Franc,BIF,108,47,FBu
+Bermudian Dollar,BMD,60,48,$
+Brunei Dollar,BND,96,49,$
+Boliviano,BOB,68,50,Bs
+Mvdol,BOV,984,51,
+Bahamian Dollar,BSD,44,52,$
+Ngultrum,BTN,64,53,Nu
+Pula,BWP,72,54,P
+Belarussian Ruble,BYR,974,55,Br
+Belize Dollar,BZD,84,56,$
+Congolese Franc,CDF,976,57,Fr
+WIR Euro,CHE,947,58,
+WIR Franc,CHW,948,59,
+Unidad de Fomento,CLF,990,60,UF
+Colombian Peso,COP,170,61,$
+Colombian Unidad de Valor Real,COU,970,62,
+Costa Rican Colon,CRC,188,63,₡
+Peso Convertible,CUC,931,64,$
+Cuban Peso,CUP,192,65,$
+Cabo Verde Escudo,CVE,132,66,$
+Djibouti Franc,DJF,262,67,Fdj
+Dominican Peso,DOP,214,68,$
+Algerian Dinar,DZD,12,69,دج
+Egyptian Pound,EGP,818,70,ج.م
+Nakfa,ERN,232,71,Nfk
+Ethiopian Birr,ETB,230,72,Br
+Fiji Dollar,FJD,242,73,$
+Falkland Islands Pound,FKP,238,74,£
+Lari,GEL,981,75,
+Ghana Cedi,GHC,936,76,₵
+Gibraltar Pound,GIP,292,77,£
+Dalasi,GMD,270,78,D
+Guinea Franc,GNF,324,79,FG
+Quetzal,GTQ,320,80,Q
+Guyana Dollar,GYD,328,81,$
+Lempira,HNL,340,82,L
+Kuna,HRK,191,83,
+Gourde,HTG,332,84,G
+Iraqi Dinar,IQD,368,85,ع.د
+Iranian Rial,IRR,364,86,ريال
+Iceland Krona,ISK,352,87,ISK
+Jamaican Dollar,JMD,388,88,$
+Jordanian Dinar,JOD,400,89,JD
+Kenyan Shilling,KES,404,90,KSh
+Som,KGS,417,91,
+Riel,KHR,116,92,៛
+Comoro Franc,KMF,174,93,
+North Korean Won,KPW,408,94,₩
+Kuwaiti Dinar,KWD,414,95,د.ك
+Cayman Islands Dollar,KYD,136,96,$
+Tenge,KZT,398,97,
+Kip,LAK,418,98,₭
+Lebanese Pound,LBP,422,99,ل.ل
+Sri Lanka Rupee,LKR,144,100,₨
+Liberian Dollar,LRD,430,101,$
+Loti,LSL,426,102,L
+Libyan Dinar,LYD,434,103,ل.د
+Moroccan Dirham,MAD,504,104,د.م
+Moldovan Leu,MDL,498,105,
+Malagasy Ariary,MGA,969,106,
+Denar,MKD,807,107,
+Kyat,MMK,104,108,K
+Tugrik,MNT,496,109,₮
+Pataca,MOP,446,110,$
+Ouguiya,MRO,478,111,UM
+Mauritius Rupee,MUR,480,112,₨
+Rufiyaa,MVR,462,113,MRf
+Kwacha,MWK,454,114,MK
+Mexican Unidad de Inversion (UDI),MXV,979,115,
+Mozambique Metical,MZN,943,116,MTn
+Namibia Dollar,NAD,516,117,$
+Naira,NGN,566,118,₦
+Cordoba Oro,NIO,558,119,C$
+Nepalese Rupee,NPR,524,120,₨
+Rial Omani,OMR,512,121,ر.ع
+Balboa,PAB,590,122,
+Nuevo Sol,PEN,604,123,S./
+Kina,PGK,598,124,K
+Guarani,PYG,600,125,₲
+Qatari Rial,QAR,634,126,ر.ق
+Romanian Leu,RON,946,127,ROL
+Serbian Dinar,RSD,941,128,дин
+Rwanda Franc,RWF,646,129,RF
+Saudi Riyal,SAR,682,130,ر.س
+Solomon Islands Dollar,SBD,90,131,$
+Seychelles Rupee,SCR,690,132,SRe
+Sudanese Pound,SDG,938,133,ج.س
+Saint Helena Pound,SHP,654,134,£
+Leone,SLL,694,135,Le
+Somali Shilling,SOS,706,136,Sh
+Surinam Dollar,SRD,968,137,$
+South Sudanese Pound,SSP,728,138,
+Dobra,STD,678,139,Db
+El Salvador Colon,SVC,222,140,₡
+Syrian Pound,SYP,760,141,S£
+Lilangeni,SZL,748,142,
+Somoni,TJS,972,143,
+Turkmenistan New Manat,TMM,934,144,m
+Tunisian Dinar,TND,788,145,د.ت
+Paï¿½anga,TOP,776,146,$
+Trinidad and Tobago Dollar,TTD,780,147,$
+Tanzanian Shilling,TZS,834,148,TSh
+Hryvnia,UAH,980,149,₴
+Uganda Shilling,UGX,800,150,USh
+US Dollar (Next day),USN,997,151,
+Uruguay Peso en Unidades Indexadas (URUIURUI),UYI,940,152,
+Peso Uruguayo,UYU,858,153,$U
+Uzbekistan Sum,UZS,860,154,лв
+Bolivar,VEB,937,155,Bs
+Vietnam Dong,VND,704,156,₫
+Vatu,VUV,548,157,Vt
+Tala,WST,882,158,$
+CFA Franc BEAC,XAF,950,159,franc
+East Caribbean Dollar,XCD,951,160,$
+SDR (Special Drawing Right),XDR,960,161,
+CFA Franc BCEAO,XOF,952,162,franc
+CFP Franc,XPF,953,163,CFP
+Sucre,XSU,994,164,
+ADB Unit of Account,XUA,965,165,
+Yemeni Rial,YER,886,166,﷼
+Zambian Kwacha,ZMW,967,167,ZK
+Zimbabwe Dollar,ZWL,932,168,$

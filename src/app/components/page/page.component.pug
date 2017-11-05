@@ -1,0 +1,12 @@
+div.btas-page
+  div.btas-page__show-active-only("*ngIf"="showToggleActiveOnly")
+    btas-checkbox(
+      "[title]"="'Show Active Only'"
+      "[name]"="showActiveOnly"
+      "[labelPosition]"="'left'"
+      "(checkChange)"="onToggleActiveOnly($event)"
+    )
+  div.btas-page__title {{ pageModel.title | i18n }}
+  div.btas-page__subtitle("*ngIf"="pageModel.subtitle") {{ pageModel.subtitle | i18n }}
+  div.row.btas-page__separator
+  ng-content

@@ -1,0 +1,29 @@
+@import '~@styles/variables.scss';
+
+
+label.clearfix:after {
+  clear: both;
+}
+
+.btas-input__label {
+  padding: 0 15px;
+  font-size: $font-title-size;
+  font-weight: $font-normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btas-input__value {
+  padding: 0 15px;
+  font-size: $font-title-size;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btas-input__item {
+  font-size: $font-title-size;
+  padding: 2px 5px 2px 5px;
+  border: $border-thin solid $theme-content;
+  width: 100%;
+  @include border-radius(5px)
+}

@@ -1,0 +1,4 @@
+/* this will fix the cross browser issue */
+[hidden] {
+  display: none !important;
+}

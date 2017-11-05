@@ -1,0 +1,22 @@
+div.dynamic-input("[formGroup]"="formGroup")
+  label.control-label.modal-field__label(
+    "[hidden]"="'hidden' === fieldConfig.labelPosition"
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title }}
+  div.clearfix("*ngIf"="'top' == fieldConfig.labelPosition")
+  div.modal-field__value("[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]")
+    button.btn.btn-primay((click)="showModal()") {{ fieldConfig.value || 'Show' }}
+  div.modal.fade(
+      "*ngIf"="isModalShown"
+      bsModal [config]="{show: true}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="mySmallModalLabel"
+      aria-hidden="true"
+      "(onHidden)"="onHidden()")
+    btas-modal-field-dialog(
+      "(dismiss)"="onDataChanged($event, true)"
+      "(applyChanges)"="onDataChanged($event)"
+      "[option]"="fieldConfig.fieldOptions"
+      "[model]"="model"
+)

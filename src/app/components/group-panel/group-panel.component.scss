@@ -1,0 +1,44 @@
+@import "~@styles/button.scss";
+@import '~@styles/variables.scss';
+
+.group-panel {
+    margin-bottom: 20px;
+    border: none;
+}
+
+.group-panel__title {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    line-height: 30px;
+    color: $black;
+}
+
+.group-panel__text {
+    font-size: $font-title-size;
+    font-weight: $font-bold;
+    line-height: inherit;
+}
+
+.group-panel__button {
+    line-height: 0px;
+}
+
+.group-panel__separator {
+    line-height: 3px;
+    margin: 0px 0 10px;
+    border-bottom: $border-thin solid $grey;
+}
+
+.panel-default>.panel-heading {
+    background-color: $white;
+    border-color: $white;
+}
+
+.group-panel__toggle-button {
+  &.selected {
+    background-color: $theme;
+    color: $white;
+  }
+}

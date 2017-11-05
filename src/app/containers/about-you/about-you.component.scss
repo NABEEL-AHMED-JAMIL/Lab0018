@@ -1,0 +1,40 @@
+@import '~@styles/variables.scss';
+
+.btas-about-you__sidenav {
+  padding-left: 0;
+}
+
+.btas-sidenav {
+  padding: 10px 16px 10px 20px;
+  height: 100%;
+  background-color: $limeblue;
+  @include box-shadow(0 0 5px $theme);
+}
+
+.btas-sidenav--left {
+  margin-bottom: 5px;
+  height: auto;
+  border-right-color: $theme;
+  border-bottom-color: $theme;
+  border-bottom-right-radius: 20px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .btas-sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .btas-sidenav--left {
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.btas-about-you__content {
+  height: 100%;
+  max-width: $content-max-width;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}

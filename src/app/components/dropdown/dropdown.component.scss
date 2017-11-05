@@ -1,0 +1,25 @@
+@import '~@styles/variables.scss';
+
+.btn-border {
+    border-color: $theme;
+    line-height: 100%;
+}
+
+.btn-group {
+  padding: 0px 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.caret {
+    color: $theme;
+}
+
+.dropdown__toggle {
+//  margin-right: 15px;
+//  margin-left: 15px;
+  padding: 5px;
+//  font-size: $font-normal-size;
+  border: $border-thin solid $theme-content;
+  @include border-radius(5px)
+}

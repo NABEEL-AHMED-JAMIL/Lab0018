@@ -1,0 +1,20 @@
+.btas-superannuation.container-fluid
+  btas-page(
+    "[pageModel]"="pageModel"
+    "[showToggleActiveOnly]"="true"
+    "(toggleActiveOnly)"="onToggleActiveOnly($event)"
+    "(pageDestroy)"="onNavigateAway()"
+    )
+    btas-group-panel(
+      "*ngFor"="let superType of superTypesMap.keys()"
+      "[hidden]"="activeOnly && (superPensionsExcludedMap$ | async | mySafeAccess:superType)"
+      "[selected]"="true !== (superPensionsExcludedMap$ | async | mySafeAccess:superType)"
+      "[itemConfig]"="superTypesMap.get(superType)"
+      "[items]"="(superPensions$ | async | mySafeAccess:superType)"
+      "(contentChange)"="onContentChange($event)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddSuperPension(superType)"
+      "(deleteItem)"="onDeleteSuperPension(superType, $event)"
+      "(toggle)"="onToggleSuperannuation(superType, $event)"
+    )

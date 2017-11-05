@@ -1,0 +1,16 @@
+.modal-content { 
+  /deep/ .group-panel-item__body {
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+  }
+
+  /deep/ .modal-header {
+    border-bottom-width: 0;
+  }
+}
+
+.modal-body {
+  padding-top: 0;
+}
+

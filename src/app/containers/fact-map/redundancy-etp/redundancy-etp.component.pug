@@ -1,0 +1,17 @@
+.btas-redundancy-etp.container-fluid
+  btas-page("[pageModel]"="pageModel"
+  "(pageDestroy)"="onNavigateAway()"
+)
+    btas-group-panel(
+      "*ngFor"="let redundancyType of redundancyTypesMap.keys()"
+      "[hidden]"="activeOnly && (redundanciesExcludedMap$ | async | mySafeAccess:redundancyType)"
+      "[selected]"="true !== (redundanciesExcludedMap$ | async | mySafeAccess:redundancyType)"
+      "[itemConfig]"="redundancyTypesMap.get(redundancyType)"
+      "[items]"="(redundancies$ | async | mySafeAccess:redundancyType)"
+      "(contentChange)"="onContentChange($event)"
+      "[hasAdd]"="true"
+      "[hasToggle]"="true"
+      "(add)"="onAddRedundancies(redundancyType)"
+      "(deleteItem)"="onDeleteRedundancies(redundancyType, $event)"
+      "(toggle)"="onToggleRedundancies(redundancyType, $event)"
+    )

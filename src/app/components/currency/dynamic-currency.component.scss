@@ -1,0 +1,58 @@
+@import '../input/dynamic-input.component.scss';
+@import '../dropdown/dynamic-dropdown.component.scss';
+
+.dropdown-toggle:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.dynamic-currency-dropdown__toggle {
+  @extend .dynamic-dropdown__toggle;
+  white-space: nowrap;
+  margin-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: 5px;
+  border-right-color: $theme-light;
+}
+
+.dynamic-dropdown__options {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.dropup .dynamic-dropdown__options {
+  margin-bottom: -5px;
+}
+
+.dynamic-currency__input__item {
+  @extend .dynamic-input__item;
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 0;
+  text-align: right;
+}
+
+.dynamic-dropdown__caret.caret {
+  margin-left: 8px;
+}
+
+.dynamic-currency__field {
+  white-space: nowrap;
+  padding: 0 15px;
+  display: flex;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.dropdown-item.separator {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.dynamic-currency__value {
+  @extend .dynamic-dropdown__value;
+}
+
+.input_wrapper {
+  flex-grow: 1;
+}

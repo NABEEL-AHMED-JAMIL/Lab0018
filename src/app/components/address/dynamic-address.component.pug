@@ -1,0 +1,33 @@
+div.btas-address("[formGroup]"="formGroup")
+  label.control-label.btas-dynamic-address__label(
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title | i18n }}
+  div.btas-dynamic-address__inputs(
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+    "[formGroupName]"="fieldConfig.name"
+  )
+    div.row
+      input.col-md-12.btas-dynamic-address__line1(
+        "[formControlName]"="'addressLine1'"
+        placeholder="Address Line 1"
+        "(change)"="onValueChanged()"
+      )
+    div.row
+      input.col-md-12.btas-dynamic-address__line2(
+        "[formControlName]"="'addressLine2'"
+        placeholder="Address Line 2"
+        "(change)"="onValueChanged()"
+      )
+    div.row
+      div.col-md-6.btas-dynamic-address__state
+        input(
+          "[formControlName]"="'state'"
+          placeholder="State"
+          "(change)"="onValueChanged()"
+        )
+      div.col-md-6.btas-dynamic-address__postcode
+        input(
+          "[formControlName]"="'postcode'"
+          placeHolder="Postcode"
+          "(change)"="onValueChanged()"
+        )

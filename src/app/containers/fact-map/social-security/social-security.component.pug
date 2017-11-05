@@ -1,0 +1,8 @@
+.btas-social-security.container-fluid
+  btas-page("[pageModel]"="pageModel"
+    "(pageDestroy)"="onNavigateAway()"
+  )
+    btas-group-panel(
+      "[itemConfig]"="centrelinkPanel" 
+      "[items]"="items$ | async"
+      "(contentChange)"="onContentChange($event)")

@@ -1,0 +1,50 @@
+@import "~@styles/variables.scss";
+
+.btn-borderless {
+  border: 0 none;
+}
+
+.btn-circle {
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
+  border: $border-medium solid $theme;
+  color: $theme;
+  @include border-radius(16px);
+
+  &:active {
+    color: $white;
+    background: $theme;
+  }
+}
+
+.functional-btn {
+  float: right;
+  background: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.btn-danger {
+  border: $border-medium solid $theme-danger;
+  color: $theme-danger-highlight;
+  &:active {
+    color: $white;
+    background: $theme-danger;
+  }
+  &:active:hover {
+    border-color: $theme-danger;
+  }
+}
+
+.btn-bar {
+  display: inline-block;
+}
+
+.btn-bar .btn-group {
+  margin-left: 5px;
+}

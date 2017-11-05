@@ -1,0 +1,16 @@
+div("[formGroup]"="formGroup")
+  label.control-label.dynamic-checkbox__label(
+    "*ngIf"="fieldConfig.labelPosition !== 'hidden'"
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]"
+  ) {{ fieldConfig.title | i18n }}
+  label.dynamic-checkbox__item(
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]"
+  )
+    input.dynamic-checkbox__input(
+      "id"="{{ uuidString }}"
+      "type"="checkbox"
+      "[checked]"="fieldConfig.checked != null ? fieldConfig.checked : fieldValue"
+      "[formControlName]"="fieldConfig.name"
+      "(change)"="onValueChanged()"
+    )
+    label("for"="{{ uuidString }}")

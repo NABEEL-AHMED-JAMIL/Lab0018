@@ -1,0 +1,32 @@
+div("[formGroup]"="formGroup")
+  label.control-label.multiselect-checkbox__label(
+    "[ngClass]"="['col-md-' + (fieldConfig.labelSpan || 4)]") {{ fieldConfig.title }}
+  div(
+    "[ngClass]"="['col-md-' + (fieldConfig.fieldSpan || 4)]")
+    div(
+      "*ngFor"="let item of fieldConfig.options; let i=index"
+    )
+      input.multiselect-checkbox__input(
+      id="{{ uuidStrings[i] }}"
+      type="checkbox"
+      "[value]"="item.value"
+      "[checked]"="itemChecked(item)"
+      "(click)"="select($event,item.value)"
+      )
+      label.multiselect-checkbox__label(
+        "for"="{{ uuidStrings[i] }}") {{ item.title }}
+    div
+      input.multiselect-checkbox__input(
+        id="{{ uuidOther }}"
+        type="checkbox"
+        "[checked]"="displayOther"
+        "(change)"="isChecked($event)"
+        )
+      label.multiselect-checkbox__label("for"="{{ uuidOther }}") Other
+      input.multiselect-input__item(
+        type="text"
+        "(change)"="onOtherChanged($event)"
+        "*ngIf"="displayOther")
+  input("type"="hidden"
+      "[formControlName]"="fieldConfig.name"
+      "[value]"="fieldValue")
